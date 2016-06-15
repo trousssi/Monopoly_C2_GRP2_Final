@@ -54,7 +54,7 @@ public class IhmConstruire  extends JFrame{
     
     private void initUIComponents(ArrayList<ProprieteAConstruire> p) {
         this.setTitle("Construire");
-        this.setLayout(new GridLayout(p.size()+2,1));
+        this.setLayout(new GridLayout(p.size()+3,1));
         JPanel panelTexte = new JPanel();
         panelTexte.setBackground(color);
         panelTexte.add(new JLabel("Cliquez sur une propriété pour acheter"));
@@ -100,12 +100,13 @@ public class IhmConstruire  extends JFrame{
             propriete.addMouseListener(new MouseListener() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
+                    System.out.println("propriete");
                     String nomPropriete = propriete.getName();
                     for (ProprieteAConstruire p : proprietes) {
                         if (nomPropriete.equals(p.getNomCarreau())) {
                             observateur.construire(p, j);
                             ihmJeu.ajoutMaison(p.getNumero());
-                            //System.out.println("PROP CONSTRUITE" + p.getNomCarreau());
+                            System.out.println("PROP CONSTRUITE" + p.getNomCarreau());
                             refresh();
                         }
                     }
@@ -154,8 +155,7 @@ public class IhmConstruire  extends JFrame{
     }
 
     public void afficher() {
-        setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
-        setSize(500, propHeight+propHeight*proprietes.size());
+        setSize(500, 2*propHeight+propHeight*proprietes.size());
         this.setLocationRelativeTo(null);
         this.setBackground(color);
         setVisible(true);                     
