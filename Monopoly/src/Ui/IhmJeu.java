@@ -285,7 +285,7 @@ public class IhmJeu extends JFrame{
                             this.observateur.Reponse(5, j, res);
                         } else if (res.isEnPrison()) {
                             
-                            this.labelinfoCarte.setText("Vous Allez en Prison");
+                            this.labelinfoCarte.setText("Carte prison, Vous Allez en Prison");
                             this.observateur.Reponse(6, j, res);
                         }
                     }
@@ -309,14 +309,14 @@ public class IhmJeu extends JFrame{
                     this.observateur.Reponse(0, j, res);
                 }
                 else if (res.isEnPrison()) {
-                    this.labelinfoCarte.setText("Vous Allez en Prison");
+                    this.labelinfoCarte.setText("Case allez en prison, Vous allez en prison");
                     this.observateur.Reponse(6, j, res);
                 }
                 
             }
             else if (res.getNomCarreau() == null && res.isEnPrison()) {
                 if (res.getDeplacement() == -1) {
-                    this.labelinfoCarte.setText("Vous allez en Prison");
+                    this.labelinfoCarte.setText("Vous avez fait 3 doubles, Vous allez en prison");
                     this.observateur.Reponse(0, j, res);
                 }
                 else {
