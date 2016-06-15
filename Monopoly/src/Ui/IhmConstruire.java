@@ -100,13 +100,13 @@ public class IhmConstruire  extends JFrame{
             propriete.addMouseListener(new MouseListener() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    System.out.println("propriete");
+                    //System.out.println("propriete");
                     String nomPropriete = propriete.getName();
                     for (ProprieteAConstruire p : proprietes) {
                         if (nomPropriete.equals(p.getNomCarreau())) {
                             observateur.construire(p, j);
                             ihmJeu.ajoutMaison(p.getNumero());
-                            System.out.println("PROP CONSTRUITE" + p.getNomCarreau());
+                            //System.out.println("PROP CONSTRUITE" + p.getNomCarreau());
                             refresh();
                         }
                     }
