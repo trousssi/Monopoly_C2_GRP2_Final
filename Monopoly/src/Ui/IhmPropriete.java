@@ -106,7 +106,7 @@ public class IhmPropriete extends JFrame {
         panelQuitter.setLayout(new BorderLayout());
         JPanel panelQuitterEst = new JPanel();
         panelQuitter.add(panelQuitterEst, BorderLayout.EAST);
-        JButton quitter = new JButton("Quitter");
+        JButton quitter = new JButton("Fermer la fenêtre");
         panelQuitterEst.add(quitter, BorderLayout.NORTH);
         
         IhmPropriete ihmProp = this;
@@ -120,7 +120,7 @@ public class IhmPropriete extends JFrame {
     }
 
     private void afficher() {
-        setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+        setTitle("A");
         setSize(500, 2*propHeight+propHeight*(j.getProprietesAconstruire().size()+j.getCompagnies().size()+j.getGares().size()));
         setVisible(true);                     
 

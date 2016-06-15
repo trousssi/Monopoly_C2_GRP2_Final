@@ -38,10 +38,10 @@ public class IhmFinTour extends JFrame {
         super();
         this.joueurs = joueurs;
         for (int i = 0; i< joueurs.size(); i++) {
-            //Transfert des couleurs en String en couleurs en hexadecimal
-            String couleur = couleurJoueurs.get(joueurs.get(i).getNom()); 
+            //Transfert des couleurs en String en couleurs RGB hexadecimal
+            String couleurTemp = couleurJoueurs.get(joueurs.get(i).getNom()); 
             String couleurJoueur = null;
-            switch (couleur) {
+            switch (couleurTemp) {
                 case "Rouge":   couleurJoueur = this.couleur[0];break;
                 case "Bleu" :   couleurJoueur = this.couleur[1];break; 
                 case "Vert" :   couleurJoueur = this.couleur[2];break;
