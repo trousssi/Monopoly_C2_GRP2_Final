@@ -682,6 +682,7 @@ public class IhmJeu extends JFrame{
     }
     
     public void ajoutMaison (int numero) {
+        System.out.println("JEU" + numero);
         plateau.ajoutMaison(numero);
     }
     
