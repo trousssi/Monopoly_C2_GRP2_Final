@@ -286,12 +286,14 @@ public class IhmJeu extends JFrame{
 
 
                         this.observateur.Reponse(5, j, res);
-                    } else if (res.isEnPrison()) {
-
-                        this.labelinfoCarte.setText("Carte prison, Vous Allez en Prison");
-                        this.observateur.Reponse(6, j, res);
-                    }
+                    } 
                 }
+                if (res.isEnPrison()) {
+
+                    this.labelinfoCarte.setText("Carte prison, Vous Allez en Prison");
+                    this.observateur.Reponse(6, j, res);
+                }
+                
 
             }
             else if ("Impôt sur le revenu".equals(res.getNomCarreau())) {

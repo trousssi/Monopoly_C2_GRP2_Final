@@ -228,8 +228,8 @@ public class Monopoly {
                                     //System.out.println(data.get(i)[1] + " prix " + data.get(i)[2] + " déplacement " + Integer.parseInt(data.get(i)[3]));
                             }
                             else if(caseType.compareTo("PR") == 0){
-                                    CartePrison pr = new CartePrison(data.get(i)[1]);
-                                    cartesCommu.put(i-16, pr);
+                                    //CartePrison pr = new CartePrison(data.get(i)[1]);
+                                    //cartesCommu.put(i-16, pr);
                                     //System.out.println(data.get(i)[1] + " prix " + data.get(i)[2] + " déplacement " + Integer.parseInt(data.get(i)[3]));
                             }
                             else

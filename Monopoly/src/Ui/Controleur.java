@@ -60,56 +60,6 @@ public class Controleur {
         }
         
         public Carreau lancerDesAvancer(Joueur j, int nbDouble) {
-            /*int resDes1 = 0;
-            int resDes2 = 0;
-            Carreau carreau = null;
-            int sommeDes = 0; //Si on a deux dés égaux le joueur joue deux fois
-            int nbDouble = 0;
-            while (resDes1 == resDes2 && nbDouble < 3) {
-            resDes1 = lancerDes();
-            resDes2 = lancerDes();
-            sommeDes = resDes1+resDes2; //Si on a deux dés égaux le joueur joue deux fois
-            if (nbDouble == 2 && resDes1 == resDes2) {
-            allerEnPrison(j);
-            } else {
-            carreau = this.avancerJoueur(j, sommeDes);
-            obs.messageJoueurAvance(j, sommeDes, carreau, true);
-            Jeu.Resultat res = carreau.action(j,sommeDes, monopoly.pickCartes());
-            this.action(obs.action(res, j), j, res);
-            nbDouble++;
-            }
-            }
-            return carreau;*/
-            
-            
-            
-            
-            /*  int resDes1 = 0;
-            int resDes2 = 0;
-            Carreau carreau = null;
-            int sommeDes = 0; //Si on a deux dés égaux le joueur joue deux fois
-            
-            //while (resDes1 == resDes2 && nbDouble < 3) {
-            resDes1 = lancerDes();
-            resDes2 = lancerDes();
-            sommeDes = resDes1+resDes2; //Si on a deux dés égaux le joueur joue deux fois
-            if (nbDouble == 2 && resDes1 == resDes2) {
-            allerEnPrison(j);
-            } else {
-            carreau = this.avancerJoueur(j, sommeDes);
-            //obs.messageJoueurAvance(j, sommeDes, carreau, true);
-            
-            Jeu.Resultat res = carreau.action(j,sommeDes, monopoly.pickCartes());
-            nbDouble++;
-            this.obs.action(res, j, resDes1, resDes2, nbDouble);
-            
-            }
-            //     }
-            return carreau;*/
-            
-            
-            
-            
             int resDes1 = 0;
             int resDes2 = 0;
             Carreau carreau = null;
@@ -149,26 +99,6 @@ public class Controleur {
 
         
         
-        /*	private Carreau lancerDésAvancer(Joueur j) {
-        int resDes1 = lancerDes();
-        int resDes2 = lancerDes();
-        int sommeDes = resDes1+resDes2; //Si on a deux dés égaux le joueur joue deux fois
-        if (resDes1 == resDes2) {
-        Carreau carreau = monopoly.avancerJoueur(j, sommeDes);
-        ihm.messageJoueurAvance(j, sommeDes, carreau, true);
-        Jeu.Resultat res = carreau.action(j,sommeDes, monopoly.pickCartes());
-        this.action(ihm.action(res, j), j, res, monopoly.pickCartes());
-        resDes1 = lancerDes();
-        resDes2 = lancerDes();
-        sommeDes = resDes1+resDes2;
-        }
-        Carreau carreau = monopoly.avancerJoueur(j, sommeDes);
-        ihm.messageJoueurAvance(j, sommeDes, carreau, false);       //Affiche les infos types : nomJoueur, cash, carreau ...
-        Jeu.Resultat res = carreau.action(j,sommeDes, monopoly.pickCartes());
-        //ihm.action(res, j);
-        this.action(ihm.action(res, j), j, res, monopoly.pickCartes()); //L'ihm action envoie le cas dans lequel on se trouve sous forme d'entier
-        return carreau;
-        }*/       
     public Carreau avancerJoueur(Joueur joueur, int sommeDes) { // Méthode permettant au pion du joueur d'avancer dans le jeu en fonction de la somme des dés lancés.
         Carreau carreau = joueur.getPositionCourante();
         int numCarDep = carreau.getNumero();
