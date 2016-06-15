@@ -413,8 +413,11 @@ public final class IhmPlateau extends JPanel{
         
         nomJoueurCourant = j.getNom();
         int numCarreauDestination = positionCourante.getNumero();
-
-        System.out.println("prison = " + prison);
+        if (prisonniers.contains(nomJoueurCourant) && !prison) {
+            prisonniers.remove(nomJoueurCourant);
+            prisonnierNePeutPlusBouger.remove(nomJoueurCourant);
+        }
+        
         animationEnCours = true;
         timer = new Timer(+400, new ActionListener() {//Toutes les 1 ms on va repeindre
                 @Override
@@ -424,7 +427,6 @@ public final class IhmPlateau extends JPanel{
                         animationEnCours = false;
                         if (prison) {
                             prisonniers.add(nomJoueurCourant);
-                            System.out.println("Repaint");
                             repaint();
                         }
                         else prisonniers.remove(nomJoueurCourant);
