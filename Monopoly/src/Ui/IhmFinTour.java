@@ -72,7 +72,7 @@ public class IhmFinTour extends JFrame {
             joueurCourant = joueurs.get(i);
             JPanel panelJoueurCourant = new JPanel();
             panelJoueurCourant.setBackground(fond);
-            panelJoueurCourant.setLayout(new GridLayout(4,1));
+            panelJoueurCourant.setLayout(new GridLayout(5,1));
             if (i == 0) { // Gère les bordures pour qu'il n'y ai pas 2 tracés sur la même ligne
                 panelJoueurCourant.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, Color.BLACK));
             } else {
@@ -100,7 +100,16 @@ public class IhmFinTour extends JFrame {
             labelPosition.setVerticalAlignment(JLabel.CENTER);
             panelJoueurCourant.add(labelPosition);
             
-            //TODO: Cas où le joueur a ou non une carte sortir de prison
+            JLabel labelCarte  = new JLabel();
+            switch (joueurCourant.getCartesPrison().size()) {
+                case 0: labelCarte.setText("<html> 0 carte de <br>sortie de prison </html>"); break;
+                case 1: labelCarte.setText("<html> 1 carte de <br>sortie de prison </html>"); break;
+                case 2: labelCarte.setText("<html> 2 cartes de <br>sortie de prison </html>"); break;
+                case 3: labelCarte.setText("<html> 3 cartes de <br>sortie de prison </html>"); break;
+            }
+            labelCarte.setHorizontalAlignment(JLabel.CENTER);
+            labelCarte.setVerticalAlignment(JLabel.CENTER);
+            panelJoueurCourant.add(labelCarte);
             
             boutonsProprietes.get(i).setBackground(couleurJoueurs.get(joueurCourant));
             boutonsProprietes.get(i).setForeground(Color.WHITE);
