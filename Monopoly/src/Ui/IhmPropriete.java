@@ -50,7 +50,7 @@ public class IhmPropriete extends JFrame {
         propsConstruire.setLayout(new GridLayout(j.getProprietesAconstruire().size(),1));
         if (j.getProprietesAconstruire().size() == 0) {
             propsConstruire.setLayout(new GridLayout(1,1));
-            propsConstruire.add(new JLabel ("Vous ne possédez pas de propriétés à construire"));
+            propsConstruire.add(new JLabel ("<html><font color='gray'>Vous ne possédez pas de propriétés à construire</font></html>"));
         } else {
             for (ProprieteAConstruire p : j.getProprietesAconstruire()) {
                 JPanel proprieteAConst = new JPanel();
@@ -77,7 +77,7 @@ public class IhmPropriete extends JFrame {
         this.add(compagnies);
         if (j.getCompagnies().size() == 0) {
             compagnies.setLayout(new GridLayout(1,1));
-            compagnies.add(new JLabel ("Vous ne possédez pas de compagnie"));
+            compagnies.add(new JLabel ("<html><font color='gray'>Vous ne possédez pas de compagnie</font></html>"));
         } else {
             compagnies.setLayout(new GridLayout(j.getCompagnies().size(),1));
             for (Compagnie c : j.getCompagnies()) {
@@ -98,7 +98,7 @@ public class IhmPropriete extends JFrame {
         gares.setLayout(new GridLayout(j.getGares().size(),1));
         if (j.getGares().size() == 0) {
             gares.setLayout(new GridLayout(1,1));
-            gares.add(new JLabel ("Vous ne possédez pas de gare"));
+            gares.add(new JLabel ("<html><font color='gray'>Vous ne possédez pas de gare</font></html>"));
         } else {
             for (Gare g : j.getGares()) {
                 JPanel gare = new JPanel();

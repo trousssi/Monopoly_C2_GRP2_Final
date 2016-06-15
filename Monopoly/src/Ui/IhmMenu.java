@@ -46,7 +46,7 @@ public class IhmMenu extends JFrame  {
      */
     public void afficher() { 
         this.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
-        this.setSize(500, 300);
+        this.setSize(500, 320);
         this.setLocationRelativeTo(null);
         this.setVisible(true);                     
     }  

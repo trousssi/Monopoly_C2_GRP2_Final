@@ -413,8 +413,11 @@ public final class IhmPlateau extends JPanel{
         
         nomJoueurCourant = j.getNom();
         int numCarreauDestination = positionCourante.getNumero();
-
-        System.out.println("prison = " + prison);
+        if (prisonniers.contains(nomJoueurCourant) && !prison) {
+            prisonniers.remove(nomJoueurCourant);
+            prisonnierNePeutPlusBouger.remove(nomJoueurCourant);
+        }
+        
         animationEnCours = true;
         timer = new Timer(+400, new ActionListener() {//Toutes les 1 ms on va repeindre
                 @Override
@@ -424,10 +427,12 @@ public final class IhmPlateau extends JPanel{
                         animationEnCours = false;
                         if (prison) {
                             prisonniers.add(nomJoueurCourant);
-                            System.out.println("Repaint");
                             repaint();
                         }
-                        else prisonniers.remove(nomJoueurCourant);
+                        else {
+                            prisonniers.remove(nomJoueurCourant);
+                            prisonnierNePeutPlusBouger.remove(nomJoueurCourant);
+                        }
                         
                     }
                     else {
@@ -444,12 +449,13 @@ public final class IhmPlateau extends JPanel{
      * @param numCase 
      */
     public void ajoutMaison(int numCase) {//Il faudra construire une maison ou un hotel (nbMaison = 5) sur la case
-        
+        System.out.println("Ajout Maison");
         if (maisons.get(numCase) == null) {//Si cette propriete ne comportais aucune maison
             maisons.put(numCase, 1);//elle doit maintenant en comporter une.
         } else {
             maisons.replace(numCase, maisons.get(numCase)+1);//on ajoute une maison si la propriéte en possedait déjà
         }
+        repaint();
     }
 
     public HashMap<String, String> getCouleurJoueurs() {
