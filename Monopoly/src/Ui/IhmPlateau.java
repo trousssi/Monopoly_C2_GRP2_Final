@@ -449,7 +449,7 @@ public final class IhmPlateau extends JPanel{
      * @param numCase 
      */
     public void ajoutMaison(int numCase) {//Il faudra construire une maison ou un hotel (nbMaison = 5) sur la case
-        System.out.println("Ajout Maison");
+        //System.out.println("Ajout Maison");
         if (maisons.get(numCase) == null) {//Si cette propriete ne comportais aucune maison
             maisons.put(numCase, 1);//elle doit maintenant en comporter une.
         } else {

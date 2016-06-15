@@ -276,10 +276,10 @@ public class Controleur {
                     }
                 }
             }
-            System.out.println("Maison " + prop.getNomCarreau() + " " + prop.getNbMaison());
+            /* System.out.println("Maison " + prop.getNomCarreau() + " " + prop.getNbMaison());
             System.out.println("Hotel " + prop.getNomCarreau() + " " + prop.getNbHotel());
             System.out.println("");
-            System.out.println("");
+            System.out.println("");*/
             return peut;
         }
         

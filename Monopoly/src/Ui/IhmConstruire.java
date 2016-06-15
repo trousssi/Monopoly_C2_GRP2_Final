@@ -108,6 +108,7 @@ public class IhmConstruire  extends JFrame{
                     String nomPropriete = propriete.getName();
                     for (ProprieteAConstruire p : proprietes) { //Lors du clic on cherche la propriété qui correspond au panel cliqué
                         if (nomPropriete.equals(p.getNomCarreau())) {
+
                             observateur.construire(p, j); //On crstruit une maison sur la propriété
                             ihmJeu.ajoutMaison(p.getNumero()); //On ajoute une maison sur le plateau
                             refresh(); //On met à jour la fenetre construire

@@ -130,7 +130,6 @@ public class IhmPropriete extends JFrame {
     }
 
     private void afficher() {
-        setTitle("A");
         setSize(500, 2*propHeight+propHeight*(j.getProprietesAconstruire().size()+j.getCompagnies().size()+j.getGares().size()));
         this.setLocationRelativeTo(null);
         setVisible(true);                     
