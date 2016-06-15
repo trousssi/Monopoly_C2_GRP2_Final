@@ -681,4 +681,8 @@ public class IhmJeu extends JFrame{
         return this.plateau.getCouleurJoueurs();    
     }
     
+    public void ajoutMaison (int numero) {
+        plateau.ajoutMaison(numero);
+    }
+    
 }
