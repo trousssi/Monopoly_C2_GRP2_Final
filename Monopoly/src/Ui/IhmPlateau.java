@@ -429,7 +429,10 @@ public final class IhmPlateau extends JPanel{
                             prisonniers.add(nomJoueurCourant);
                             repaint();
                         }
-                        else prisonniers.remove(nomJoueurCourant);
+                        else {
+                            prisonniers.remove(nomJoueurCourant);
+                            prisonnierNePeutPlusBouger.remove(nomJoueurCourant);
+                        }
                         
                     }
                     else {
