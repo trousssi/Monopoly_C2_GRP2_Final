@@ -58,6 +58,7 @@ public class IhmConstruire  extends JFrame{
         JPanel panelTexte = new JPanel();
         panelTexte.setBackground(color);
         panelTexte.add(new JLabel("Cliquez sur une propriété pour acheter"));
+        this.add(panelTexte);
         JPanel panelInfo = new JPanel();
         panelInfo.setBackground(color);
         panelInfo.setLayout(new GridLayout());
