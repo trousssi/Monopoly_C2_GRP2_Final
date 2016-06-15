@@ -28,7 +28,7 @@ public class CarteReparation  extends Carte{
         renvoyerNom(res);
         int nbMaison = 0;
         int nbHotel = 0;
-        for (ProprieteAConstruire prop : j.getProprietesAconstruire()) {
+        for (ProprieteAConstruire prop : j.getProprietesAconstruire()) { //Pour chaque maison et hotel on fait payer le joueur des prix de la carte
             nbMaison = nbMaison + prop.getNbMaison();
             nbHotel = nbHotel + prop.getNbHotel();
         }

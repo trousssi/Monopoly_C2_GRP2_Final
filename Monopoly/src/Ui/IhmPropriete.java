@@ -40,7 +40,7 @@ public class IhmPropriete extends JFrame {
 
     private void initUIComponents() {
         this.setTitle("Liste de vos propriétés");
-        this.setLayout(new GridLayout(4,1));
+        this.setLayout(new GridLayout(4,1)); //On divise la fenêtre en 4 parties :  les proprietes à construire les gares et les compagnies ainsi que le bouton fermer le fenêtre
         JPanel propsConstruire = new JPanel();
         propsConstruire.setBackground(color);
         TitledBorder titrePropConstruire = BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK), "Propriétés à Construire");
@@ -52,7 +52,7 @@ public class IhmPropriete extends JFrame {
             propsConstruire.setLayout(new GridLayout(1,1));
             propsConstruire.add(new JLabel ("<html><font color='gray'>Vous ne possédez pas de propriétés à construire</font></html>"));
         } else {
-            for (ProprieteAConstruire p : j.getProprietesAconstruire()) {
+            for (ProprieteAConstruire p : j.getProprietesAconstruire()) { //On affiche chaque propriété du joueur
                 JPanel proprieteAConst = new JPanel();
                 proprieteAConst.setBackground(color);
                 proprieteAConst.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
@@ -75,12 +75,12 @@ public class IhmPropriete extends JFrame {
         titreCompagnie.setTitleJustification(TitledBorder.LEFT);
         compagnies.setBorder(titreCompagnie);
         this.add(compagnies);
-        if (j.getCompagnies().size() == 0) {
+        if (j.getCompagnies().size() == 0) { //Si le joueur n'a pas de gares on affiche un message
             compagnies.setLayout(new GridLayout(1,1));
             compagnies.add(new JLabel ("<html><font color='gray'>Vous ne possédez pas de compagnie</font></html>"));
         } else {
             compagnies.setLayout(new GridLayout(j.getCompagnies().size(),1));
-            for (Compagnie c : j.getCompagnies()) {
+            for (Compagnie c : j.getCompagnies()) { //Sinon on affiche chaque gare du joueur
                 JPanel compagnie = new JPanel();
                 compagnie.setBackground(color);
                 compagnie.setLayout(new BorderLayout());
@@ -96,11 +96,11 @@ public class IhmPropriete extends JFrame {
         gares.setBorder(titreGare);
         this.add(gares);
         gares.setLayout(new GridLayout(j.getGares().size(),1));
-        if (j.getGares().size() == 0) {
+        if (j.getGares().size() == 0) { //Si le joueur n'a pas de gares on affiche un message
             gares.setLayout(new GridLayout(1,1));
             gares.add(new JLabel ("<html><font color='gray'>Vous ne possédez pas de gare</font></html>"));
         } else {
-            for (Gare g : j.getGares()) {
+            for (Gare g : j.getGares()) { //Sinon on affiche chaque gare du joueur
                 JPanel gare = new JPanel();
                 gare.setBackground(color);
                 gare.setLayout(new BorderLayout());

@@ -21,7 +21,7 @@ public class CarreauImpot extends Carreau{
     }
 
     @Override
-    public Resultat action(Joueur j, int sommeDe, ArrayList<Carte> cartes) {
+    public Resultat action(Joueur j, int sommeDe, ArrayList<Carte> cartes) { //On retourne le numero du carreu et le nom du carreau
         Resultat res = new Resultat();
         res.setNomCarreau(j.getPositionCourante().getNomCarreau());
         res.setNumeroCarreau(this.getNumero());

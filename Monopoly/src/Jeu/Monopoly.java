@@ -53,7 +53,7 @@ public class Monopoly {
         joueur = null;
     }
 
-    public ArrayList<Carte> pickCartes () {
+    public ArrayList<Carte> pickCartes () { //On prend une carte chance et une carte communaute de cartesChance et cartesCommunaute et on boucle si une des deux cartes est possede
         boolean possede = true;
         Carte chance = null;
         Carte communaute = null;

@@ -18,15 +18,15 @@ public class CarreauCarte extends Carreau{
     }
     
     @Override
-    public Resultat action (Joueur j, int sommeDes, ArrayList<Carte> c) {
+    public Resultat action (Joueur j, int sommeDes, ArrayList<Carte> c) { 
         Resultat res = new Resultat();
-        Carte carte = tirerCarte(c);
-        res.setCarte(carte);
-        res = carte.action(j);
+        Carte carte = tirerCarte(c);    //On récupère une des deux cartes données en paramètre
+        res.setCarte(carte);    //On renvoie la carte dans le resultat
+        res = carte.action(j);  //On réalise l'action de la carte piochée
         return res;
     }
     
-    private Carte tirerCarte (ArrayList<Carte> cartes) {
+    private Carte tirerCarte (ArrayList<Carte> cartes) { //Si on tombe sur la case 8/23/37 on tire une carte chance, si on tombe sur la case 83/18/34 on tire une carte communaute
         Carte ca = null;
         switch (this.getNumero()) {
             case 8:

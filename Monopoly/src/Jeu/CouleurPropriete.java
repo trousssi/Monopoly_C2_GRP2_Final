@@ -4,7 +4,7 @@ package Jeu;
 
 import java.awt.Color;
 
-public enum CouleurPropriete {
+public enum CouleurPropriete { //Groupe associé à la valeur rgb de la couleur du plateau
     bleuFonce(new Color(0,107,177)), 
     orange(new Color(237,139,2)), 
     marron(new Color(154,74,44)), 

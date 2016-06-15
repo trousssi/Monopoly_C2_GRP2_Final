@@ -24,8 +24,8 @@ public class CarteLiberePrison extends Carte{
         res.setNomCarreau(j.getPositionCourante().getNomCarreau());
         renvoyerNom(res);
         
-        j.addCartePrison(this);
-        this.setPossede(true);
+        j.addCartePrison(this);     //On rajoute cette carte prison au joueur
+        this.setPossede(true);      //On fait en sorte que la carte ne sois plus piochée, on met son booléen possédé à vrai
         
         return res;
     }

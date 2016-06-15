@@ -24,16 +24,16 @@ public class CarteDeplacement extends Carte {
         res.setNomCarreau(j.getPositionCourante().getNomCarreau());
         renvoyerNom(res);
         res.setDeplace(true);
-        if (this.getDeplacement().getNumero() == -3) { 
+        if (this.getDeplacement().getNumero() == -3) { //On fait reculer le joueur de 3 carreaux
             res.setDeplacement(-3);
             //j.setPositionCourante(monopoly.getCarreau((j.getPositionCourante().getNumero())-3));
-        } else  if (this.getDeplacement().getNumero() == 2) {
+        } else  if (this.getDeplacement().getNumero() == 2) { //On envoie le joueur à Belleville
             j.setPositionCourante(this.getDeplacement());
-        } else if (this.getDeplacement().getNumero() < j.getPositionCourante().getNumero()) {
+        } else if (this.getDeplacement().getNumero() < j.getPositionCourante().getNumero()) { //On calcule le carreau d'arrivée si le joueur doit passer par la case départ
             int avancer = (40+this.getDeplacement().getNumero()-(j.getPositionCourante().getNumero()));
             res.setDeplacement(avancer);
             //this.avancerJoueur(j, avancer);
-        } else if (this.getDeplacement().getNumero() > j.getPositionCourante().getNumero()){
+        } else if (this.getDeplacement().getNumero() > j.getPositionCourante().getNumero()){ //On calcule le carreau d'arrivée
             int avancer = this.getDeplacement().getNumero() - j.getPositionCourante().getNumero();
             res.setDeplacement(avancer);
             //this.avancerJoueur(j, this.getDeplacement().getNumero()-j.getPositionCourante().getNumero());

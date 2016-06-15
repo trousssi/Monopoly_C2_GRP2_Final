@@ -23,11 +23,11 @@ public class CarteArgent extends Carte {
         Resultat res = new Resultat();
         res.setNomCarreau(j.getPositionCourante().getNomCarreau());
         renvoyerNom(res);
-        if (this.getPrix() > 0) {
+        if (this.getPrix() > 0) { //On crédite le joueur de la valeur de la prix de la carte
             j.crediter(this.getPrix());
-        } else if (this.getPrix() < -1){
+        } else if (this.getPrix() < -1){    //On fait payer le joueur de la valeur de la prix de la carte
             j.payer(Math.abs(this.getPrix()));
-        } else if (this.getPrix() == -1) {
+        } else if (this.getPrix() == -1) {  //On met à true la valeur anniversaire dans resultat
             res.setAnniversaire(true);
         } else {
             System.out.println("ERREUR CARTE AR");

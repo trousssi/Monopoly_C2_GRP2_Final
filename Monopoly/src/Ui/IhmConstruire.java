@@ -59,6 +59,7 @@ public class IhmConstruire  extends JFrame{
         panelTexte.setBackground(color);
         panelTexte.add(new JLabel("Cliquez sur une propriété pour acheter"));
         this.add(panelTexte);
+        
         JPanel panelInfo = new JPanel();
         panelInfo.setBackground(color);
         panelInfo.setLayout(new GridLayout());
@@ -75,39 +76,41 @@ public class IhmConstruire  extends JFrame{
         panelInfo.add(infoPrix, BorderLayout.EAST);
         panelInfo.add((new JLabel("Prix")), BorderLayout.EAST);
         this.add(panelInfo);
-        for (int i=0; i<p.size(); i++) {
+        
+        for (int i=0; i<p.size(); i++) { //
             JPanel propriete = new JPanel();
             
             propriete.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
             this.add(propriete);
             propriete.setLayout(new BorderLayout());
-            JPanel couleur = new JPanel();
+            
+            JPanel couleur = new JPanel();  //On crée un panel à gauche qui contiendra la couleur du groupe de la propriete
             propriete.add(couleur, BorderLayout.WEST);
             couleur.setBackground(p.get(i).getGroupe().getCouleur().getColor());
-            JPanel nom = new JPanel();
+            
+            JPanel nom = new JPanel(); //On affiche le nom de la propriete
             nom.setBackground(color);
             propriete.add(nom, BorderLayout.CENTER);
             JLabel nomProp = new JLabel(p.get(i).getNomCarreau());
             nom.add(nomProp);
-            JPanel prix = new JPanel();
+            
+            JPanel prix = new JPanel(); //On affiche le prix 
             prix.setBackground(color);
             propriete.add(prix, BorderLayout.EAST);
             JLabel prixProp = new JLabel(Integer.toString(p.get(i).getPrixMaison()));
             prix.add(prixProp);
-            propriete.setName(p.get(i).getNomCarreau());
+            propriete.setName(p.get(i).getNomCarreau()); //On donne au JPanel le nom de la propriete
             
             
             propriete.addMouseListener(new MouseListener() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    System.out.println("propriete");
                     String nomPropriete = propriete.getName();
-                    for (ProprieteAConstruire p : proprietes) {
+                    for (ProprieteAConstruire p : proprietes) { //Lors du clic on cherche la propriété qui correspond au panel cliqué
                         if (nomPropriete.equals(p.getNomCarreau())) {
-                            observateur.construire(p, j);
-                            ihmJeu.ajoutMaison(p.getNumero());
-                            System.out.println("PROP CONSTRUITE" + p.getNomCarreau());
-                            refresh();
+                            observateur.construire(p, j); //On crstruit une maison sur la propriété
+                            ihmJeu.ajoutMaison(p.getNumero()); //On ajoute une maison sur le plateau
+                            refresh(); //On met à jour la fenetre construire
                         }
                     }
                 }

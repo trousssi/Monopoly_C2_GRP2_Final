@@ -18,12 +18,12 @@ public class CarreauPrison extends Carreau{
     }
 
     @Override
-    public Resultat action(Joueur j, int sommeDes, ArrayList<Carte> cartes) {
+    public Resultat action(Joueur j, int sommeDes, ArrayList<Carte> cartes) { // On retourne le numero et le nom de la case 
         Resultat res = new Resultat();
         res.setNomCarreau(j.getPositionCourante().getNomCarreau());
         res.setNomCarreau(this.getNomCarreau());
         res.setNomCarreau(this.getNomCarreau());
-        res.setEnPrison(true);
+        res.setEnPrison(true);  //On met le joueur en prison
         return res;
     }
     
